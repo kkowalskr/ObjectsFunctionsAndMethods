@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Kenny Kowalski.
 """
 
 ########################################################################
 #
-# TODO: 1. PUT YOUR NAME IN THE ABOVE LINE and...
+# DONE: 1. PUT YOUR NAME IN THE ABOVE LINE and...
 #
 #   Allow this file to use the rosegraphics.py file by marking the src
 #   directory as a "Sources Root".  Do that by right clicking on the src folder,
@@ -21,7 +21,6 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 
 import rosegraphics as rg
-import random
 
 
 def main():
@@ -34,6 +33,7 @@ def main():
     window = rg.TurtleWindow()
 
     turtle1()
+    turtle4()
     turtle3()
     turtle2()
     turtle2()
@@ -76,6 +76,7 @@ def turtle2():
     grace.go_to(i_am_going_here)
     grace.pen_down()
 
+
     # Do the motion.
     grace.left(90)
     grace.forward(200)
@@ -101,6 +102,16 @@ def turtle3():
     maja.begin_fill()
     maja.draw_circle(50)
     maja.end_fill()
+
+
+def turtle4():
+    joe = rg.SimpleTurtle()
+    joe.pen = rg.Pen('peru', 30)
+    joe.forward(100)
+    joe.draw_square(90)
+    joe.left(90)
+    joe.forward(100)
+    joe.draw_circle(45)
 
 
 ########################################################################
@@ -137,7 +148,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
@@ -167,7 +178,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Add a line to   main   that CALLS your new function immediately
 #   AFTER  main  calls turtle1.  So:
 #     -- the SimpleTurtle from turtle1 should move,
