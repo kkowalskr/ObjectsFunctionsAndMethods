@@ -5,18 +5,38 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Kenny Kowalski.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
+
+    circle_and_rectangle()
+    two_circles()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
 
 def two_circles():
+
+    window = rg.RoseWindow()
+
+    center1 = rg.Point(50, 50)
+    center2 = rg.Point(100, 50)
+    circle1 = rg.Circle(center1, 10)
+    circle2 = rg.Circle(center2, 20)
+
+    circle1.fill_color = 'dark salmon'
+
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+
+    window.render()
+
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -27,7 +47,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -36,6 +56,27 @@ def two_circles():
 
 
 def circle_and_rectangle():
+
+    window = rg.RoseWindow()
+
+    center = rg.Point(75, 200)
+    circle = rg.Circle(center, 50)
+    circle.fill_color = 'blue'
+
+    corner1 = rg.Point(100,50)
+    corner2 = rg.Point(150,95)
+    rectangle = rg.Rectangle(corner1, corner2)
+
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
+    print(circle.__getattribute__(''))
+    print(circle.__getattribute__('center'))
+    print(circle.__getattribute__('fill_color'))
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
