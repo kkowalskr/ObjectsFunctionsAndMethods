@@ -83,6 +83,7 @@ def circle_and_rectangle():
     print(rectangle.get_center())
     print((rectangle.corner_1.x + rectangle.corner_2.x)/2)
     print((rectangle.corner_1.y + rectangle.corner_2.y)/2)
+    
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
