@@ -13,6 +13,7 @@ import rosegraphics as rg
 
 def main():
 
+    lines()
     circle_and_rectangle()
     two_circles()
     """ Calls the other functions to demonstrate and/or test them. """
@@ -74,8 +75,8 @@ def circle_and_rectangle():
     window.close_on_mouse_click()
 
     print(circle.__getattribute__('outline_thickness'))
-    print(circle.__getattribute__('center'))
     print(circle.__getattribute__('fill_color'))
+    print(circle.__getattribute__('center'))
     print(center.__getattribute__('x'))
     print(center.__getattribute__('y'))
     print(rectangle.__getattribute__('outline_thickness'))
@@ -83,7 +84,7 @@ def circle_and_rectangle():
     print(rectangle.get_center())
     print((rectangle.corner_1.x + rectangle.corner_2.x)/2)
     print((rectangle.corner_1.y + rectangle.corner_2.y)/2)
-    
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
@@ -115,7 +116,7 @@ def circle_and_rectangle():
            150.0
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -126,6 +127,30 @@ def circle_and_rectangle():
 
 
 def lines():
+
+    window = rg.RoseWindow()
+    point11 = rg.Point(300,250)
+    point12 = rg.Point(30,90)
+    line1 = rg.Line(point11, point12)
+
+    point21 = rg.Point(75,100)
+    point22 = rg.Point(45, 250)
+    line2 = rg.Line(point21, point22)
+    line2.thickness = 5
+
+    line1.attach_to(window)
+    line2.attach_to(window)
+
+    window.render()
+
+    midpoint = line2.get_midpoint()
+
+    print(midpoint)
+    print(midpoint.x)
+    print(midpoint.y)
+
+    window.close_on_mouse_click()
+
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
