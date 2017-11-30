@@ -73,10 +73,16 @@ def circle_and_rectangle():
     window.render()
     window.close_on_mouse_click()
 
-    print(circle.__getattribute__(''))
+    print(circle.__getattribute__('outline_thickness'))
     print(circle.__getattribute__('center'))
     print(circle.__getattribute__('fill_color'))
-
+    print(center.__getattribute__('x'))
+    print(center.__getattribute__('y'))
+    print(rectangle.__getattribute__('outline_thickness'))
+    print(rectangle.__getattribute__("fill_color"))
+    print(rectangle.get_center())
+    print((rectangle.corner_1.x + rectangle.corner_2.x)/2)
+    print((rectangle.corner_1.y + rectangle.corner_2.y)/2)
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
